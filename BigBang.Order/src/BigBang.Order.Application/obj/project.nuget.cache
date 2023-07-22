@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qBzJEEftWSCTYzcxSzO3tu8Te9XG8LXiFAwQmaZm4Wtl0im/eOEiMXZN4rx7qfHNL1O59UXjJAlmGy3FlsoWig==",
+  "dgSpecHash": "L60M29BrQTbrorLnJUKO5eDtot8PHLRLOIQZ/cBs3OOp8n//X/1iNP9XQxuJ6f5DIaTGeQHs4xTLPKJvMQqiwA==",
   "success": true,
-  "projectFilePath": "C:\\Personal\\BigBang\\BigBang.Order\\src\\BigBang.Order.Application\\BigBang.Order.Application.csproj",
+  "projectFilePath": "D:\\Projects\\BigBang\\BigBang.Order\\src\\BigBang.Order.Application\\BigBang.Order.Application.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

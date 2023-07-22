@@ -8,4 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = BigBang.Order.Consumer
-build_property.ProjectDir = C:\Personal\BigBang\BigBang.Order\src\BigBang.Order.Consumer\
+build_property.ProjectDir = D:\Projects\BigBang\BigBang.Order\src\BigBang.Order.Consumer\

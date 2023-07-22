@@ -1,26 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Personal\\BigBang\\BigBang.Order\\src\\BigBang.Order.Domain\\BigBang.Order.Domain.csproj": {}
+    "D:\\Projects\\BigBang\\BigBang.Order\\src\\BigBang.Order.Domain\\BigBang.Order.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Personal\\BigBang\\BigBang.Order\\src\\BigBang.Order.Domain\\BigBang.Order.Domain.csproj": {
+    "D:\\Projects\\BigBang\\BigBang.Order\\src\\BigBang.Order.Domain\\BigBang.Order.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Personal\\BigBang\\BigBang.Order\\src\\BigBang.Order.Domain\\BigBang.Order.Domain.csproj",
+        "projectUniqueName": "D:\\Projects\\BigBang\\BigBang.Order\\src\\BigBang.Order.Domain\\BigBang.Order.Domain.csproj",
         "projectName": "BigBang.Order.Domain",
-        "projectPath": "C:\\Personal\\BigBang\\BigBang.Order\\src\\BigBang.Order.Domain\\BigBang.Order.Domain.csproj",
-        "packagesPath": "C:\\Users\\onur.altun\\.nuget\\packages\\",
-        "outputPath": "C:\\Personal\\BigBang\\BigBang.Order\\src\\BigBang.Order.Domain\\obj\\",
+        "projectPath": "D:\\Projects\\BigBang\\BigBang.Order\\src\\BigBang.Order.Domain\\BigBang.Order.Domain.csproj",
+        "packagesPath": "C:\\Users\\Onuır\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\BigBang\\BigBang.Order\\src\\BigBang.Order.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\onur.altun\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Onuır\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -54,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }

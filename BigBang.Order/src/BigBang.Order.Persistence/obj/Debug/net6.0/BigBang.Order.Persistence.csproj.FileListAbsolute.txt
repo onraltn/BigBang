@@ -10,3 +10,15 @@ C:\Personal\BigBang\BigBang.Order\src\BigBang.Order.Persistence\obj\Debug\net6.0
 C:\Personal\BigBang\BigBang.Order\src\BigBang.Order.Persistence\obj\Debug\net6.0\refint\BigBang.Order.Persistence.dll
 C:\Personal\BigBang\BigBang.Order\src\BigBang.Order.Persistence\obj\Debug\net6.0\BigBang.Order.Persistence.pdb
 C:\Personal\BigBang\BigBang.Order\src\BigBang.Order.Persistence\obj\Debug\net6.0\ref\BigBang.Order.Persistence.dll
+D:\Projects\BigBang\BigBang.Order\src\BigBang.Order.Persistence\bin\Debug\net6.0\BigBang.Order.Persistence.deps.json
+D:\Projects\BigBang\BigBang.Order\src\BigBang.Order.Persistence\bin\Debug\net6.0\BigBang.Order.Persistence.dll
+D:\Projects\BigBang\BigBang.Order\src\BigBang.Order.Persistence\bin\Debug\net6.0\BigBang.Order.Persistence.pdb
+D:\Projects\BigBang\BigBang.Order\src\BigBang.Order.Persistence\obj\Debug\net6.0\BigBang.Order.Persistence.csproj.AssemblyReference.cache
+D:\Projects\BigBang\BigBang.Order\src\BigBang.Order.Persistence\obj\Debug\net6.0\BigBang.Order.Persistence.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\BigBang\BigBang.Order\src\BigBang.Order.Persistence\obj\Debug\net6.0\BigBang.Order.Persistence.AssemblyInfoInputs.cache
+D:\Projects\BigBang\BigBang.Order\src\BigBang.Order.Persistence\obj\Debug\net6.0\BigBang.Order.Persistence.AssemblyInfo.cs
+D:\Projects\BigBang\BigBang.Order\src\BigBang.Order.Persistence\obj\Debug\net6.0\BigBang.Order.Persistence.csproj.CoreCompileInputs.cache
+D:\Projects\BigBang\BigBang.Order\src\BigBang.Order.Persistence\obj\Debug\net6.0\BigBang.Order.Persistence.dll
+D:\Projects\BigBang\BigBang.Order\src\BigBang.Order.Persistence\obj\Debug\net6.0\refint\BigBang.Order.Persistence.dll
+D:\Projects\BigBang\BigBang.Order\src\BigBang.Order.Persistence\obj\Debug\net6.0\BigBang.Order.Persistence.pdb
+D:\Projects\BigBang\BigBang.Order\src\BigBang.Order.Persistence\obj\Debug\net6.0\ref\BigBang.Order.Persistence.dll
