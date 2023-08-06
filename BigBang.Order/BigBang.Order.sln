@@ -13,15 +13,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{DC96AF
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{A5EEEC96-B7B4-4591-BBCF-BA6FB3E4FCD2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BigBang.Order.Api", "src\BigBang.Order.Api\BigBang.Order.Api.csproj", "{7F39FA21-70FD-4439-9438-C3EEB9C82779}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BigBang.Order.Api", "src\BigBang.Order.Api\BigBang.Order.Api.csproj", "{7F39FA21-70FD-4439-9438-C3EEB9C82779}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BigBang.Order.Consumer", "src\BigBang.Order.Consumer\BigBang.Order.Consumer.csproj", "{F3A95160-1EA1-41BF-8F93-593FF710E861}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BigBang.Order.Consumer", "src\BigBang.Order.Consumer\BigBang.Order.Consumer.csproj", "{F3A95160-1EA1-41BF-8F93-593FF710E861}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BigBang.Order.Domain", "src\BigBang.Order.Domain\BigBang.Order.Domain.csproj", "{4CC24709-589F-4D06-A1EA-5AA6E177C51E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BigBang.Order.Domain", "src\BigBang.Order.Domain\BigBang.Order.Domain.csproj", "{4CC24709-589F-4D06-A1EA-5AA6E177C51E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BigBang.Order.Application", "src\BigBang.Order.Application\BigBang.Order.Application.csproj", "{A0C964C3-9C5B-4382-86BF-D5EAD9BF321B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BigBang.Order.Application", "src\BigBang.Order.Application\BigBang.Order.Application.csproj", "{A0C964C3-9C5B-4382-86BF-D5EAD9BF321B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BigBang.Order.Persistence", "src\BigBang.Order.Persistence\BigBang.Order.Persistence.csproj", "{611BD444-0AD8-4165-B623-EBD43C26D6A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BigBang.Order.Persistence", "src\BigBang.Order.Persistence\BigBang.Order.Persistence.csproj", "{611BD444-0AD8-4165-B623-EBD43C26D6A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BigBang.Order.Infrastructure", "src\BigBang.Order.Infrastructure\BigBang.Order.Infrastructure.csproj", "{AAFAE4AF-DA9D-459C-B29D-EBBB625B2364}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +51,10 @@ Global
 		{611BD444-0AD8-4165-B623-EBD43C26D6A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{611BD444-0AD8-4165-B623-EBD43C26D6A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{611BD444-0AD8-4165-B623-EBD43C26D6A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAFAE4AF-DA9D-459C-B29D-EBBB625B2364}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAFAE4AF-DA9D-459C-B29D-EBBB625B2364}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAFAE4AF-DA9D-459C-B29D-EBBB625B2364}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAFAE4AF-DA9D-459C-B29D-EBBB625B2364}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -63,6 +69,7 @@ Global
 		{4CC24709-589F-4D06-A1EA-5AA6E177C51E} = {DC96AF09-D5DF-45E2-8585-3F7357A0E7CC}
 		{A0C964C3-9C5B-4382-86BF-D5EAD9BF321B} = {9B8B6A92-4E40-4E4C-B793-483F7908972B}
 		{611BD444-0AD8-4165-B623-EBD43C26D6A5} = {A5EEEC96-B7B4-4591-BBCF-BA6FB3E4FCD2}
+		{AAFAE4AF-DA9D-459C-B29D-EBBB625B2364} = {A5EEEC96-B7B4-4591-BBCF-BA6FB3E4FCD2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {03D0FBBD-9EF2-4080-83A9-ED79EDFA526F}
