@@ -1,4 +1,5 @@
 ﻿using BigBang.Order.Api;
+using BigBang.Order.Persistence;
 
 var builder = WebApplication.CreateBuilder();
 var env = builder.Environment;
@@ -14,6 +15,7 @@ builder.Configuration.AddJsonFile(
 builder.Configuration.AddEnvironmentVariables();
 
 builder.Services.RegisterHost();
+builder.Services.RegisterPersistence();
 
 var app = builder.Build();
 app.ConfigureApp(env);

@@ -16,6 +16,13 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BigBang.Order.Infrastructure\BigBang.Order.Infrastructure.csproj" />
+    <ProjectReference Include="..\BigBang.Order.Persistence\BigBang.Order.Persistence.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>
