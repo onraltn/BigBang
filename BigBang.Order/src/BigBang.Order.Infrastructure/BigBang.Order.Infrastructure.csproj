@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Convey.CQRS.Commands" Version="1.1.448" />
+    <PackageReference Include="Convey.CQRS.Events" Version="1.1.448" />
+    <PackageReference Include="Convey.CQRS.Queries" Version="1.1.448" />
+  </ItemGroup>
+
+</Project>
