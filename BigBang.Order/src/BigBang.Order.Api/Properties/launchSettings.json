@@ -3,10 +3,10 @@
     "BigBang.Order.Api": {
       "commandName": "Project",
       "launchBrowser": true,
+      "applicationUrl": "https://localhost:53046;http://localhost:53047",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
-      },
-      "applicationUrl": "https://localhost:53046;http://localhost:53047"
+      }
     }
   }
 }
