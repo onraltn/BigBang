@@ -18,5 +18,6 @@ builder.Services.RegisterHost();
 builder.Services.RegisterPersistence();
 
 var app = builder.Build();
+
 app.ConfigureApp(env);
 
