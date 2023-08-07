@@ -5,6 +5,7 @@ namespace BigBang.Order.Domain.Aggregates.ProductAggregate
 {
     public class Product : BaseEntity<long>
     {
+        //test
         public string Name { get; set; }
         public decimal Quantity { get; set; }
         public decimal Price { get; set; }
