@@ -6,4 +6,14 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Convey.CQRS.Commands" Version="1.1.448" />
+    <PackageReference Include="Convey.CQRS.Events" Version="1.1.448" />
+    <PackageReference Include="Convey.CQRS.Queries" Version="1.1.448" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BigBang.Order.Persistence\BigBang.Order.Persistence.csproj" />
+  </ItemGroup>
+
 </Project>

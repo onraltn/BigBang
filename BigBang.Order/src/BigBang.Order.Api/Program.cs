@@ -21,3 +21,5 @@ var app = builder.Build();
 
 app.ConfigureApp(env);
 
+app.Run();
+

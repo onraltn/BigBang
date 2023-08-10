@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BigBang.Events
 {
-    public record OrderStatusUpdatedEvent : IEvent
+    public record OrderStatusUpdatedEvent
     {
         public string TrackingNumber { get; set; }
         public string OrderStatus { get; set; }
