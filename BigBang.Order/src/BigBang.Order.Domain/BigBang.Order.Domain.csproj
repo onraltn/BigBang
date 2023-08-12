@@ -12,10 +12,4 @@
     <None Remove="Aggregates\CompanyAggregate\" />
     <None Remove="Aggregates\ProductAggregate\" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Aggregates\" />
-    <Folder Include="Aggregates\OrderAggregate\" />
-    <Folder Include="Aggregates\CompanyAggregate\" />
-    <Folder Include="Aggregates\ProductAggregate\" />
-  </ItemGroup>
 </Project>

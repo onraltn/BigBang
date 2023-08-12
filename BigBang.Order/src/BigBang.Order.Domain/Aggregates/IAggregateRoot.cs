@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BigBang.Order.Infrastructure.Events
+namespace BigBang.Order.Domain.Aggregates
 {
-    public interface IEvent
+    public interface IAggregateRoot
     {
-        Guid CollerationId { get; }
     }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BigBang.Events
 {
-    public record OrderCreatedEvent : IEvent
+    public record OrderCreatedEvent
     {
         public Guid CollerationId { get; set; }
         public string TrackingNumber { get; set; }

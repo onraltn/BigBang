@@ -12,6 +12,11 @@ namespace BigBang.Order.Api
     {
         public static void RegisterHost(this IServiceCollection services)
         {
+            services.AddControllers();
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Order.WebApi", Version = "v1" });
+            });
             AddConvey(services);
         }
         static void AddConvey(IServiceCollection services)
@@ -31,24 +36,18 @@ namespace BigBang.Order.Api
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Instruction.WebApi v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Order.WebApi v1"));
             }
 
             app.UseMiddleware<ExceptionMiddleware>();
 
-            app.UseHttpsRedirection()
-               .UseStaticFiles(
-                new StaticFileOptions
-                {
-                    FileProvider = new PhysicalFileProvider(AppDomain.CurrentDomain.BaseDirectory + "/wwwroot")
-                })
-
-               .UseRouting()
-               .UseAuthorization()
-               .UseEndpoints(endpoints =>
-               {
-                   endpoints.MapControllers();
-               });
+            app.UseHttpsRedirection();
+            app.UseRouting();
+            app.UseAuthorization();
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
         }
 
     }
