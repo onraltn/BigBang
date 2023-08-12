@@ -16,9 +16,15 @@ namespace BigBang.Order.Application.ApplicationEvents.PaymentCreated
         {
             this._dbContext = dbContext;
         }
-        public Task HandleAsync(PaymentCreatedApplicationEvent @event, CancellationToken cancellationToken = default)
+        public async Task HandleAsync(PaymentCreatedApplicationEvent @event, CancellationToken cancellationToken = default)
         {
-            throw new NotImplementedException();
+            using var transaction = await _dbContext.Database.BeginTransactionAsync();
+
+            var order = _dbContext.Orders.Where(x => x.OrderNumber == @event.OrderNumber).FirstOrDefault() ?? throw new ArgumentNullException("Order not found");
+            order.AddPayment(@event.Amount);
+
+            _dbContext.Orders.Update(order);
+            await transaction.CommitAsync(cancellationToken);
         }
     }
 }

@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BigBang.Order.Application\BigBang.Order.Application.csproj" />
     <ProjectReference Include="..\BigBang.Order.Infrastructure\BigBang.Order.Infrastructure.csproj" />
     <ProjectReference Include="..\BigBang.Order.Persistence\BigBang.Order.Persistence.csproj" />
   </ItemGroup>

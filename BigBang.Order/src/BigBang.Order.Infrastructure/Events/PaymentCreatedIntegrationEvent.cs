@@ -10,6 +10,13 @@ namespace BigBang.Order.Infrastructure.Events
 {
     public sealed record PaymentCreatedIntegrationEvent
     {
-        public Guid CollerationId { get; set; }
+        public decimal Amount { get; }
+        public Guid OrderNumber { get; }
+
+        public PaymentCreatedIntegrationEvent(decimal amount, Guid orderNumber)
+        {
+            Amount = amount;
+            OrderNumber = orderNumber;
+        }
     }
 }

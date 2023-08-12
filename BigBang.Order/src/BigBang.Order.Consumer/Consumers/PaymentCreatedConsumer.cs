@@ -2,14 +2,7 @@
 using BigBang.Order.Infrastructure.Events;
 using Convey.CQRS.Events;
 using MassTransit;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BigBang.Order.Consumer.Consumers
 {
@@ -30,13 +23,10 @@ namespace BigBang.Order.Consumer.Consumers
                 var message = context.Message;
                 ArgumentNullException.ThrowIfNull(message);
 
-                logger.LogInformation(message: JsonConvert.SerializeObject(message));
+                logger.LogInformation(message: JsonConvert.SerializeObject(message), context.CorrelationId);
 
                 var eventDispatcher = _serviceProvider.GetRequiredService<IEventDispatcher>();
-                await eventDispatcher.PublishAsync(new PaymentCreatedApplicationEvent()
-                {
-
-                });
+                await eventDispatcher.PublishAsync(new PaymentCreatedApplicationEvent(message.Amount, message.OrderNumber));
 
             }
             catch (Exception ex)

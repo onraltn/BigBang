@@ -11,4 +11,8 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="7.0.9" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BigBang.Order.Domain\BigBang.Order.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
