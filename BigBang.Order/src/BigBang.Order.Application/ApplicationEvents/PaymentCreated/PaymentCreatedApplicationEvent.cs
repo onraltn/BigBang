@@ -5,12 +5,12 @@ namespace BigBang.Order.Application.ApplicationEvents.PaymentCreated
     public sealed record PaymentCreatedApplicationEvent : IEvent
     {
         public decimal Amount { get; }
-        public Guid OrderNumber { get; }
+        public string TrackingNumber { get; }
 
-        public PaymentCreatedApplicationEvent(decimal amount, Guid orderNumber)
+        public PaymentCreatedApplicationEvent(decimal amount, string trackingNumber)
         {
             Amount = amount;
-            OrderNumber = orderNumber;
+            TrackingNumber = trackingNumber;
         }
     }
 }

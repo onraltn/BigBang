@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BigBang.Order.Domain\BigBang.Order.Domain.csproj" />
+    <ProjectReference Include="..\BigBang.Order.Application\BigBang.Order.Application.csproj" />
   </ItemGroup>
 
 </Project>

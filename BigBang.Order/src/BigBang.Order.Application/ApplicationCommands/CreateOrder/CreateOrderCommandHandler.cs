@@ -1,34 +1,31 @@
-﻿using BigBang.Order.Domain.Aggregates.OrderAggregate;
-using BigBang.Order.Persistence.Context;
+﻿using BigBang.Order.Domain.Repositories;
 using Convey.CQRS.Commands;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BigBang.Order.Application.ApplicationCommands.CreateOrder
 {
     public sealed class CreateOrderCommandHandler : ICommandHandler<CreateOrderCommand>
     {
-        private readonly OrderDbContext _dbContext;
+        private readonly IOrderRepository _orderRepository;
 
-        public CreateOrderCommandHandler(OrderDbContext dbContext)
+        public CreateOrderCommandHandler(IOrderRepository orderRepository)
         {
-            _dbContext = dbContext;
+            this._orderRepository = orderRepository;
         }
 
         public async Task HandleAsync(CreateOrderCommand command, CancellationToken cancellationToken = default)
         {
-            using var transaction = await _dbContext.Database.BeginTransactionAsync(cancellationToken);
             var order = new Order.Domain.Aggregates.OrderAggregate.Order(command.Amount,null, new Domain.Aggregates.OrderAggregate.ValueObjects.Address()
             {
                 City = command.City,
                 Country = command.Country,
-            });
+            }, command.TrackingNumber);
 
-            await _dbContext.AddAsync(order, cancellationToken);
-            await transaction.CommitAsync(cancellationToken);
+            foreach (var item in command.Items)
+            {
+                order.AddItem(item.ItemName, item.Quantity, item.UnitPrice);
+            }
+
+            await _orderRepository.AddAsync(order);
         }
     }
 }

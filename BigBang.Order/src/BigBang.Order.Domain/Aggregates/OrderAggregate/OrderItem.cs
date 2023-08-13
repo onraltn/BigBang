@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -8,11 +9,16 @@ using System.Threading.Tasks;
 namespace BigBang.Order.Domain.Aggregates.OrderAggregate
 {
     [Table("OrderItem", Schema = "SALES")]
-    public class OrderItem : BaseEntity<long>
+    public class OrderItem : Entity
     {
+        [Key]
+        public long Id { get; set; }
+        public long OrderId { get; set; }
         public string ItemName { get; private set; }
         public uint Quantity { get; private set; }
         public decimal UnitPrice { get; private set; }
+        public DateTime CreatedDate { get; private set; }
+        public virtual Order Order { get; set; }
         internal OrderItem(string itemName, uint quantity, decimal unitPrice)
         {
             if (string.IsNullOrEmpty(itemName)) throw new ArgumentException($"'{nameof(itemName)}' cannot be null or empty.", nameof(itemName));
@@ -22,6 +28,7 @@ namespace BigBang.Order.Domain.Aggregates.OrderAggregate
             this.ItemName = itemName;
             this.Quantity = quantity;
             this.UnitPrice = unitPrice;
+            this.CreatedDate = DateTime.Now;
         }
         internal void AddQuantity(uint quantity)
         {

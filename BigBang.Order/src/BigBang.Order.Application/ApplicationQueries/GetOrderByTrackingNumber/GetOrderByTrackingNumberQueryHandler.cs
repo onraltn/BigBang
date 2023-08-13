@@ -1,26 +1,21 @@
-﻿using BigBang.Order.Persistence.Context;
+﻿using BigBang.Order.Domain.Repositories;
 using Convey.CQRS.Queries;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BigBang.Order.Application.ApplicationQueries.GetOrderByTrackingNumber
 {
     public sealed class GetOrderByTrackingNumberQueryHandler : IQueryHandler<GetOrderByTrackingNumberQuery, GetOrderByTrackingNumberQueryResponse>
     {
-        private readonly OrderDbContext _dbContext;
+        private readonly IOrderRepository _orderRepository;
 
-        public GetOrderByTrackingNumberQueryHandler(OrderDbContext dbContext)
+        public GetOrderByTrackingNumberQueryHandler(IOrderRepository orderRepository)
         {
-            _dbContext = dbContext;
+            _orderRepository = orderRepository;
         }
 
         public async Task<GetOrderByTrackingNumberQueryResponse> HandleAsync(GetOrderByTrackingNumberQuery query, CancellationToken cancellationToken = default)
         {
-            var order = await _dbContext.Orders.Where(x => x.TrackingNumber == query.TrackingNumber).FirstOrDefaultAsync() ?? throw new ArgumentNullException(nameof(query));
+            var order = await _orderRepository.GetOrder(query.TrackingNumber);
+            if (order == null) throw new ArgumentNullException(nameof(query));
 
             return new GetOrderByTrackingNumberQueryResponse()
             {

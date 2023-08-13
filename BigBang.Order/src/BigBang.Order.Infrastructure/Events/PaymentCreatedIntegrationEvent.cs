@@ -11,12 +11,12 @@ namespace BigBang.Order.Infrastructure.Events
     public sealed record PaymentCreatedIntegrationEvent
     {
         public decimal Amount { get; }
-        public Guid OrderNumber { get; }
+        public string TrackingNumber { get; }
 
-        public PaymentCreatedIntegrationEvent(decimal amount, Guid orderNumber)
+        public PaymentCreatedIntegrationEvent(decimal amount, string trackingNumber)
         {
             Amount = amount;
-            OrderNumber = orderNumber;
+            TrackingNumber = trackingNumber;
         }
     }
 }

@@ -1,26 +1,35 @@
 ﻿using BigBang.Order.Domain.Aggregates.OrderAggregate.ValueObjects;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BigBang.Order.Domain.Aggregates.OrderAggregate
 {
     [Table("Order", Schema = "SALES")]
-    public class Order : BaseEntity<Guid>, IAggregateRoot
+    public class Order : Entity, IAggregateRoot
     {
+        [Key]
+        public long Id { get; set; }
         public string TrackingNumber { get; private set; }
         public Guid OrderNumber { get; private set; }
         public OrderStatus Status { get; private set; }
         public decimal PaidAmount { get; private set; }
+        public DateTime CreatedDate { get; private set; }
         public DateTime? EstimatedShippingDate { get; private set; }
         public Address Address { get; private set; }
-        public ICollection<OrderItem> Items { get; private set; }
+        [ForeignKey("OrderId")]
+        public virtual ICollection<OrderItem> Items { get; private set; }
 
         public decimal OrderTotal => Items.Sum(x => Convert.ToDecimal(x.Quantity) * x.UnitPrice);
 
-        public Order(decimal paidAmount, DateTime? shippingDate, Address address)
+        public Order()
+        {
+            
+        }
+        public Order(decimal paidAmount, DateTime? shippingDate, Address address, string trackingNumber)
         {
             this.Status = OrderStatus.PaymentPending;
             this.CreatedDate = DateTime.Now;
-            this.TrackingNumber = GenerateTrackingNumber();
+            this.TrackingNumber = trackingNumber;
             this.PaidAmount = paidAmount;
             this.EstimatedShippingDate = shippingDate;
             this.Address = address;
