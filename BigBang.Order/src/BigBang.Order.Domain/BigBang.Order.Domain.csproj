@@ -6,4 +6,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Aggregates\" />
+    <None Remove="Aggregates\OrderAggregate\" />
+    <None Remove="Aggregates\CompanyAggregate\" />
+    <None Remove="Aggregates\ProductAggregate\" />
+  </ItemGroup>
 </Project>
