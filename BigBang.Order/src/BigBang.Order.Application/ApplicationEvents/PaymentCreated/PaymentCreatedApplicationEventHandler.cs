@@ -1,30 +1,23 @@
-﻿using BigBang.Order.Persistence.Context;
+﻿using BigBang.Order.Domain.Repositories;
 using Convey.CQRS.Events;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BigBang.Order.Application.ApplicationEvents.PaymentCreated
 {
     public class PaymentCreatedApplicationEventHandler : IEventHandler<PaymentCreatedApplicationEvent>
     {
-        private readonly OrderDbContext _dbContext;
+        private readonly IOrderRepository _orderRepository;
 
-        public PaymentCreatedApplicationEventHandler(OrderDbContext dbContext)
+        public PaymentCreatedApplicationEventHandler(IOrderRepository orderRepository)
         {
-            this._dbContext = dbContext;
+            this._orderRepository = orderRepository;
         }
         public async Task HandleAsync(PaymentCreatedApplicationEvent @event, CancellationToken cancellationToken = default)
         {
-            using var transaction = await _dbContext.Database.BeginTransactionAsync();
 
-            var order = _dbContext.Orders.Where(x => x.OrderNumber == @event.OrderNumber).FirstOrDefault() ?? throw new ArgumentNullException("Order not found");
+            var order = await _orderRepository.GetOrder(@event.TrackingNumber) ?? throw new ArgumentNullException("Order not found");
             order.AddPayment(@event.Amount);
 
-            _dbContext.Orders.Update(order);
-            await transaction.CommitAsync(cancellationToken);
+            await _orderRepository.UpdateAsync(order);
         }
     }
 }

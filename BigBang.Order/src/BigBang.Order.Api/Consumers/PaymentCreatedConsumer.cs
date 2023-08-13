@@ -4,7 +4,7 @@ using Convey.CQRS.Events;
 using MassTransit;
 using Newtonsoft.Json;
 
-namespace BigBang.Order.Consumer.Consumers
+namespace BigBang.Order.Api.Consumers
 {
     public sealed class PaymentCreatedConsumer : IConsumer<PaymentCreatedIntegrationEvent>
     {

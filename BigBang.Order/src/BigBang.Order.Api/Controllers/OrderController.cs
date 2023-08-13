@@ -26,8 +26,10 @@ namespace BigBang.Order.Api.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> Create(CreateOrderCommand command)
         {
+            var trackingNumber = command.GenerateTrackingNumber();
+
             await CommandDispatcher.SendAsync(command);
-            return CreatedAtAction(nameof(Create), new { }, command);
+            return CreatedAtAction(nameof(Create), new { }, trackingNumber);
         }
 
         [HttpGet]

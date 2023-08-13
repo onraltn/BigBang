@@ -1,4 +1,5 @@
-﻿using BigBang.Order.Consumer.Consumers;
+﻿using BigBang.Order.Application.ApplicationEvents.PaymentCreated;
+using BigBang.Order.Consumer.Consumers;
 using BigBang.Order.Infrastructure.Events.Constants;
 using Convey;
 using Convey.CQRS.Commands;
@@ -18,6 +19,8 @@ namespace BigBang.Order.Consumer
     {
         public static void RegisterHost(this IServiceCollection services, IConfiguration configuration)
         {
+            services.AddScoped<IEventHandler<PaymentCreatedApplicationEvent>, PaymentCreatedApplicationEventHandler>();
+
             AddConvey(services);
             RegisterMassTransit(services, configuration);
         }
@@ -59,6 +62,7 @@ namespace BigBang.Order.Consumer
                         t.Password(settings["Password"]);
                     });
 
+                    cfg.UseRawJsonSerializer();
                     cfg.AutoDelete = false;
                     cfg.Durable = true;
 

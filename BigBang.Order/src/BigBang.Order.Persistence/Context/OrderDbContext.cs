@@ -1,6 +1,7 @@
 ﻿using BigBang.Order.Domain.Aggregates.OrderAggregate;
 using BigBang.Order.Domain.Aggregates.OrderAggregate.ValueObjects;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection.Emit;
 
 namespace BigBang.Order.Persistence.Context
 {
@@ -16,6 +17,18 @@ namespace BigBang.Order.Persistence.Context
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
+
+            builder.Entity<Order.Domain.Aggregates.OrderAggregate.Order>()
+             .HasMany(order => order.Items);
+
+            builder.Entity<Order.Domain.Aggregates.OrderAggregate.Order>()
+            .Property(c => c.Status)
+            .UsePropertyAccessMode(PropertyAccessMode.Field)
+            .HasMaxLength(255)
+            .IsRequired(true)
+            .HasConversion(
+                v => v.Name,
+                v => OrderStatus.Get(v));
 
 
         }

@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BigBang.Order.Persistence\BigBang.Order.Persistence.csproj" />
+    <ProjectReference Include="..\BigBang.Order.Domain\BigBang.Order.Domain.csproj" />
   </ItemGroup>
 
 </Project>

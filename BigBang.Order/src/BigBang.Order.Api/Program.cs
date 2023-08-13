@@ -14,7 +14,7 @@ builder.Configuration.AddJsonFile(
     reloadOnChange: true);
 builder.Configuration.AddEnvironmentVariables();
 
-builder.Services.RegisterHost();
+builder.Services.RegisterHost(builder.Configuration);
 builder.Services.RegisterPersistence();
 
 var app = builder.Build();
